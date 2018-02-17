@@ -19,14 +19,14 @@ import me.shadorc.shadbot.utils.embed.HelpBuilder;
 import me.shadorc.shadbot.utils.object.Emoji;
 import sx.blah.discord.api.internal.json.objects.EmbedObject;
 
-@RateLimited(cooldown = RateLimiter.GAME_COOLDOWN, max = 2)
+@RateLimited(cooldown = RateLimiter.GAME_COOLDOWN, max = 6)
 @Command(category = CommandCategory.GAME, names = { "dice" })
 public class DiceCmd extends AbstractCommand {
 
 	protected static final ConcurrentHashMap<Long, DiceManager> MANAGERS = new ConcurrentHashMap<>();
 
-	protected static final int MULTIPLIER = 5;
-	private static final int MAX_BET = 250_000;
+	protected static final int MULTIPLIER = 10;
+	private static final int MAX_BET = 999_999_999;
 
 	@Override
 	public void execute(Context context) throws MissingArgumentException, IllegalCmdArgumentException {
